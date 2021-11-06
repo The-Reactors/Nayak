@@ -35,7 +35,7 @@ function getDistanceFromLatLonInKm(lat1,lon1,lat2,lon2) {
     var d = R * c; // Distance in km
     return d;
   }
-  router.get('/MyTickets',auth, async (req, res) => {
+  router.get('/userTickets',auth, async (req, res) => {
     try{
         const problems = await Problem.find({creatorId:req.user.id == undefined ? req.user._id : req.user.id})
         res.send(problems)
